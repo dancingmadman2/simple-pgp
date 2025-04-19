@@ -48,8 +48,12 @@ const KeyGenerationForm = () => {
     setError(null);
 
     try {
-      if (!formData.name || !formData.email || !formData.passphrase) {
-        throw new Error('Name, email, and passphrase are required');
+      if (!formData.name) {
+        throw new Error('Name is required');
+      }
+
+      if (!formData.passphrase) {
+        throw new Error('Passphrase is required');
       }
 
       if (formData.passphrase.length < 8) {
@@ -93,7 +97,7 @@ const KeyGenerationForm = () => {
             
             <div>
               <label className="block text-sm font-medium mb-1">
-                Email
+                Email <span className="text-xs text-muted">(optional)</span>
               </label>
               <input
                 type="email"
@@ -102,8 +106,10 @@ const KeyGenerationForm = () => {
                 onChange={handleChange}
                 className="w-full px-3 py-2 bg-input-bg border border-border rounded-md focus:outline-none focus:ring-1 focus:ring-accent"
                 placeholder="johnbravo354@example.com"
-                required
               />
+              <p className="mt-1 text-xs text-muted">
+                
+              </p>
             </div>
             
             <div>

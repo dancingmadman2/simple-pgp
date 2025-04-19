@@ -3,12 +3,12 @@ import * as openpgp from 'openpgp';
 
 export interface KeyOptions {
   name: string;
-  email: string;
+  email?: string;
   passphrase: string;
   keyType: 'ecc' | 'rsa';
   rsaBits?: 2048 | 3072 | 4096;
   curve?: 'curve25519' | 'p256' | 'p384' | 'p521';
-  expirationTime?: number;
+  expirationTime?: number; 
 }
 
 export interface KeyPair {
@@ -39,7 +39,7 @@ export async function generateKeyPair(options: KeyOptions): Promise<KeyPair> {
   
   const userID = {
     name,
-    email,
+    ...(email ? { email } : {})
   };
 
   const config: openpgp.GenerateKeyOptions = {
