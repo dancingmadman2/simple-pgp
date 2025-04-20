@@ -127,7 +127,7 @@ const KeyGenerationForm = () => {
                 required
               />
               <p className="mt-1 text-xs text-muted">
-                Minimum 8 characters. This passphrase will protect your private key and will be required for decryption.
+                Minimum 8 characters. This passphrase will be required for decryption.
               </p>
             </div>
             
