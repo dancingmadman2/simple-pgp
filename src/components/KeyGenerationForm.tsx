@@ -282,9 +282,11 @@ const KeyGenerationForm = () => {
                 Copy
               </button>
             </div>
-            <div className="mt-2 p-2 border-l-2 border-[#d92020] bg-[#fff8f8] text-sm">
-              <strong>IMPORTANT:</strong> Keep your private key secret. You&apos;ll need it to decrypt messages.
-            </div>
+              <div>
+            <p className="mt-1 text-xs text-muted">
+              Don&apos;t share your private key with others, use it to decrypt messages.
+            </p>
+          </div>
           </div>
           
           <button
